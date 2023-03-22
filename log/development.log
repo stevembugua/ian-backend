@@ -1,0 +1,220 @@
+  [1m[35m (105.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (64.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230322074108)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322074108"]]
+  [1m[36mTRANSACTION (84.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-22 07:53:05.558933"], ["updated_at", "2023-03-22 07:53:05.558933"]]
+  [1m[36mTRANSACTION (60.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:21:39 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+...          app_response{message: 'Registration was succesful'...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...: 'Registration was succesful',status: :created, data: user}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+...          app_response{message: 'Something went wrong during...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+...ent wrong during registartion',status: :uprocessable_entity}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:22:49 +0300
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+...          app_response{message: 'Registration was succesful'...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...: 'Registration was succesful',status: :created, data: user}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+...          app_response{message: 'Something went wrong during...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+...ent wrong during registartion',status: :uprocessable_entity,...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+...able_entity, data: user.errors}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:27:00 +0300
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting '}'
+... 'Registration was succesful'},status: :created, data: user}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting '}'
+...nt wrong during registartion'},status: :uprocessable_entity,...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+...able_entity, data: user.errors}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:28:34 +0300
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+...         app_response {message: 'Registration was succesful'...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...: 'Registration was succesful',status: :created, data: user}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+...          app_response{message: 'Something went wrong during...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+...ent wrong during registartion',status: :uprocessable_entity,...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+...able_entity, data: user.errors}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:32:16 +0300
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+...         app_response {message: 'Registration was succesful'...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...: 'Registration was succesful',status: :created, data: user}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+...          app_response{message: 'Something went wrong during...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+...ent wrong during registartion',status: :uprocessable_entity,...
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+...able_entity, data: user.errors}
+...                              ^
+E:/ian/ian-backend/app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected ':', expecting '}'
+app/controllers/users_controller.rb:9: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:9: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:18: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:33:11 +0300
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected tLABEL, expecting ')'
+...         app_response (message: 'Registration was succesful'...
+...                       ^~~~~~~~
+E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...: 'Registration was succesful',status: :created, data: user)
+...                              ^
+):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected tLABEL, expecting ')'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected tLABEL, expecting ')'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:33:58 +0300
+  
+SyntaxError (E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected tLABEL, expecting ')'
+...         app_response (message: 'Registration was succesful'...
+...                       ^~~~~~~~
+E:/ian/ian-backend/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+...: 'Registration was succesful',status: :created, data: user)
+...                              ^
+):
+  
+app/controllers/users_controller.rb:6: syntax error, unexpected tLABEL, expecting ')'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:6: syntax error, unexpected tLABEL, expecting ')'
+app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting `end'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:35:16 +0300
+  
+ArgumentError (Unknown validator: 'PrecenceValidator'):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:35:53 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"steve@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x0000020cb17d2598>, params: {"username"=>"steve", "email"=>"steve@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 1.0ms | Allocations: 20369)
+
+
+  
+NoMethodError (undefined method `create' for nil:NilClass):
+  
+app/controllers/users_controller.rb:4:in `register'
+Started POST "/users" for 127.0.0.1 at 2023-03-22 11:36:31 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"steve@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x0000020cb0a92bf8>, params: {"username"=>"steve", "email"=>"steve@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "steve"], ["email", "steve@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-22 08:36:31.604044"], ["updated_at", "2023-03-22 08:36:31.604044"]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (148.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "steve"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "steve@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 434ms (Views: 1.1ms | ActiveRecord: 152.1ms | Allocations: 21325)
+
+
