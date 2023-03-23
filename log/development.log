@@ -218,3 +218,132 @@ Processing by UsersController#register as */*
 Completed 201 Created in 434ms (Views: 1.1ms | ActiveRecord: 152.1ms | Allocations: 21325)
 
 
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-23 10:50:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user/login/check"):
+  
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 10:51:13 +0300
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 349)
+
+
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 10:53:00 +0300
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | Allocations: 283)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-23 10:54:27 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x0000024932fca260>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "steve@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 2.1ms | Allocations: 39286)
+
+
+  
+ArgumentError (Unrecognized status code :uprocessable_entity):
+  
+app/controllers/application_controller.rb:5:in `app_response'
+app/controllers/users_controller.rb:10:in `register'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-23 10:54:57 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00000249314ee540>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00000249314ee540>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'steve' OR email = 'steve@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00000249314ee540>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.3ms | Allocations: 1551)
+
+
+  
+ArgumentError (unknown keyword: :meesage):
+  
+app/controllers/application_controller.rb:4:in `app_response'
+app/controllers/users_controller.rb:19:in `login'
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 10:57:29 +0300
+Processing by UsersController#check_login_status as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.5ms | Allocations: 1491)
+
+
+  
+NoMethodError (undefined method `-' for "2023-03-23T10:53:00.878+03:00":String
+Did you mean?  -@):
+  
+app/controllers/application_controller.rb:25:in `session_expired?'
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 11:04:01 +0300
+Processing by UsersController#check_login_status as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms | Allocations: 1486)
+
+
+  
+NoMethodError (undefined method `-' for "2023-03-23T10:53:00.878+03:00":String
+Did you mean?  -@):
+  
+app/controllers/application_controller.rb:25:in `session_expired?'
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 11:06:19 +0300
+Processing by UsersController#check_login_status as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.7ms | Allocations: 1486)
+
+
+  
+NoMethodError (undefined method `-' for "2023-03-23T10:53:00.878+03:00":String
+Did you mean?  -@):
+  
+app/controllers/application_controller.rb:25:in `session_expired?'
+Started GET "/users/login/check" for 127.0.0.1 at 2023-03-23 11:07:39 +0300
+Processing by UsersController#check_login_status as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 450)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-23 11:08:11 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00000249348471a8>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00000249348471a8>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'steve' OR email = 'steve@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00000249348471a8>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.3ms | Allocations: 2819)
+
+
+  
+ArgumentError (unknown keyword: :meesage):
+  
+app/controllers/application_controller.rb:4:in `app_response'
+app/controllers/users_controller.rb:24:in `login'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-23 11:11:32 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000024934b67c48>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000024934b67c48>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'steve' OR email = 'steve@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000024934b67c48>, params: {"username"=>"steve", "password"=>"[FILTERED]", "email"=>"steve@gmail.com", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"steve", "email"=>"steve@gmail.com"}} }[0m
+Completed 200 OK in 197ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 3013)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-23 11:12:40 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 318)
+
+
