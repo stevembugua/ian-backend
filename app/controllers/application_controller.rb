@@ -29,4 +29,9 @@ class ApplicationController < ActionController::API
        
     end
 
+    #get logged in user user
+    def user
+        User.find(session[:uid].to_i)
+    end
+
 end

@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: pizza_db_r37e
+  username: pizza_db_r37e_user
+  password: <%= ENV['PIZZA_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
